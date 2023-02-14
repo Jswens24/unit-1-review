@@ -1,13 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-import Top from './Top';
-import Next from './Next';
+import Profile from './components/Profile';
+
 
 function App() {
+
+  const user = {
+    firstName: 'Jessica',
+    lastName: 'Swenson',
+    favoriteColor: 'Purple'
+  }
+
+  const userTwo = {
+    firstName: 'Scott',
+    lastName: 'Sutherland',
+    favoriteColor: 'Blue'
+  }
+
+
   return (
     <div className="App">
-      <Top />
-      <Next />
+      <Profile info={user} isMe={true} />
+      <Profile info={userTwo} isMe={false} />
     </div>
   );
 }
