@@ -1,15 +1,18 @@
 import React from 'react';
+import { useState } from 'react';
 
 const Profile = (props) => {
+    const [favColor, setFavColor] = useState('TBD');
 
-    console.log(props);
+    // let favColor = 'TBD';
 
     return (
         <div>
-            {props.isMe && 'this is my profile'}
+
             <p>First name: {props.info.firstName}</p>
             <p>Last name: {props.info.lastName}</p>
-            <p>Favorite color: {props.info.favoriteColor}</p>
+            <p>Favorite color: {favColor}</p>
+            <input placeholder='enter your favorite color here!' onChange={e => setFavColor(e.target.value)} />
         </div>
     )
 };
