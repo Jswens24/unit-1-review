@@ -27,15 +27,21 @@ function App() {
     const newProfile = {
       firstName,
       lastName
-    }
+    };
 
     setProfiles([...profiles, newProfile])
     setFirstName('');
     setLastName('');
   }
 
-  const profileDisplay = profiles.map((profileObj) => {
-    return <Profile info={profileObj} />
+
+  const deleteProfile = (index) => {
+    profiles.splice(index, 1);
+    setProfiles([...profiles]);
+  }
+
+  const profileDisplay = profiles.map((profileObj, index) => {
+    return <Profile info={profileObj} index={index} deleteProfile={deleteProfile} key={index} />
   })
 
   return (

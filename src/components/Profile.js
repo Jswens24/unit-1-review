@@ -13,6 +13,7 @@ const Profile = (props) => {
             <p>Last name: {props.info.lastName}</p>
             <p>Favorite color: {favColor}</p>
             <input placeholder='enter your favorite color here!' onChange={e => setFavColor(e.target.value)} />
+            <button onClick={() => props.deleteProfile(props.index)}>Delete Profile</button>
         </div>
     )
 };
