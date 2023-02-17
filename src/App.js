@@ -1,24 +1,33 @@
+import { useState } from 'react';
 import './App.css';
 import Profile from './components/Profile';
 
 
+
 function App() {
+  const [profiles, setProfiles] = useState([
+    {
+      firstName: 'Jessica',
+      lastName: 'Swenson',
+    },
+    {
+      firstName: 'Scott',
+      lastName: 'Sutherland',
+    },
+    {
+      firstName: 'Joely',
+      lastName: 'Vernier',
+    }
+  ])
 
-  const user = {
-    firstName: 'Jessica',
-    lastName: 'Swenson',
-  }
-
-  const userTwo = {
-    firstName: 'Scott',
-    lastName: 'Sutherland',
-  }
-
+  const profileDisplay = profiles.map((profileObj) => {
+    console.log();
+    return <Profile info={profileObj} />
+  })
 
   return (
     <div className="App">
-      <Profile info={user} />
-      <Profile info={userTwo} />
+      {profileDisplay}
     </div>
   );
 }

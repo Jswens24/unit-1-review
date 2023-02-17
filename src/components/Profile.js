@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import './Profile.css';
 
 const Profile = (props) => {
     const [favColor, setFavColor] = useState('TBD');
@@ -7,8 +8,7 @@ const Profile = (props) => {
     // let favColor = 'TBD';
 
     return (
-        <div>
-
+        <div className='profile-container'>
             <p>First name: {props.info.firstName}</p>
             <p>Last name: {props.info.lastName}</p>
             <p>Favorite color: {favColor}</p>
