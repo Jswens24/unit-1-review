@@ -46,7 +46,9 @@ function App() {
 
   return (
     <div className="App">
-      {profileDisplay}
+      <div className='profiles-container'>
+        {profileDisplay}
+      </div>
 
       <form onSubmit={addNewProfile}>
         <input placeholder='first name' value={firstName} onChange={e => setFirstName(e.target.value)} />
